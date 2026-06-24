@@ -1,0 +1,43 @@
+{
+  "meshConfig": {
+    "sources": [
+      {
+        "name": "Commerce",
+        "handler": {
+          "graphql": {
+            "endpoint": "https://na1-sandbox.api.commerce.adobe.com/KhAZCKMq6YvYU3GSFLN9XE/graphql",
+            "operationHeaders": {
+              "Content-Type": "application/json",
+              "Magento-Environment-Id": "KhAZCKMq6YvYU3GSFLN9XE",
+              "Magento-Website-Code": "base",
+              "Magento-Store-Code": "default",
+              "Magento-Store-View-Code": "default",
+              "Magento-Customer-Group": "356a192b7913b04c54574d18c28d46e6395428ab",
+              "X-Api-Key": "not_used"
+            },
+            "schemaHeaders": {
+              "Magento-Environment-Id": "KhAZCKMq6YvYU3GSFLN9XE",
+              "X-Api-Key": "not_used"
+            }
+          }
+        }
+      },
+      {
+        "name": "Enrichment",
+        "handler": {
+          "openapi": {
+            "source": "./enrichment-openapi.json"
+          }
+        },
+        "transforms": [
+          {
+            "prefix": {
+              "value": "Enrichment_",
+              "includeRootOperations": true
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

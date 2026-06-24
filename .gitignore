@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Build artifacts
+dist/
+.parcel-cache/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+.aws.tmp.creds.json
+
+# OS/editor noise
+.DS_Store
